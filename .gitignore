@@ -1,0 +1,13 @@
+dist
+node_modules
+upload/
+reports
+coverage
+cache
+.*
+!.eslint*
+!.prettier*
+!.editorconfig
+!.gitignore
+!.gitlab-ci.yml
+*.tgz
