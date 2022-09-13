@@ -1,5 +1,10 @@
 # st2
 
+![build](https://github.com/DTeam-Top/st2/actions/workflows/ci.yml/badge.svg)
+![check-code-coverage](https://img.shields.io/badge/code--coverage-98.22%25-brightgreen)
+[![npm](https://img.shields.io/npm/dt/@dteam/st2)](https://www.npmjs.com/package/@dteam/st2)
+[![npm (scoped)](https://img.shields.io/npm/v/@dteam/st2)](https://www.npmjs.com/package/@dteam/st2)
+
 st2 is [string-table](https://github.com/dtao/string-table) refactored in TypeScirpt with more enhancements:
 
 - add type information, then it can be used in modern IDE like vscode to work with IntelliSense.

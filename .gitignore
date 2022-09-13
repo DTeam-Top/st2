@@ -4,10 +4,12 @@ upload/
 reports
 coverage
 cache
+xunit.xml
 .*
 !.eslint*
 !.prettier*
 !.editorconfig
 !.gitignore
 !.gitlab-ci.yml
+!.github
 *.tgz
