@@ -4,6 +4,7 @@ upload/
 reports
 coverage
 cache
+xunit.xml
 .*
 !.eslint*
 !.prettier*
