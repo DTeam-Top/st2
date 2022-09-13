@@ -24,3 +24,8 @@ jobs:
           name: Test Report
           path: xunit.xml
           reporter: jest-junit
+      - name: Code Coverage Summary Report
+        uses: 5monkeys/cobertura-action@master
+        with:
+          path: coverage/cobertura-coverage.xml
+          minimum_coverage: 75
