@@ -1,0 +1,26 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Test
+        run: npm test -- --tap | npx -y tap-xunit > xunit.xml
+      - name: Test Report
+        uses: phoenix-actions/test-reporting@v8
+        id: test-report
+        if: success() || failure()
+        with:
+          name: Test Report
+          path: xunit.xml
+          reporter: jest-junit

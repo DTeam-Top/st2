@@ -1,5 +1,7 @@
 # st2
 
+![build](https://github.com/DTeam-Top/st2/actions/workflows/ci.yml/badge.svg)
+
 st2 is [string-table](https://github.com/dtao/string-table) refactored in TypeScirpt with more enhancements:
 
 - add type information, then it can be used in modern IDE like vscode to work with IntelliSense.

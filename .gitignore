@@ -10,4 +10,5 @@ cache
 !.editorconfig
 !.gitignore
 !.gitlab-ci.yml
+!.github
 *.tgz
