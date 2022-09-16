@@ -148,13 +148,25 @@ createTable(users, {
 
 A formatter may also return an object with the properties `{ value, format }`, where `format` in turn can have the properties `{ color, alignment }`.
 
+> **NOTE**: color output required `colors` package:
+>
+> ```sh
+> npm i colors
+> ```
+>
+> More details can be found in: https://www.npmjs.com/package/colors#colors-and-styles
+
 ```ts
+// don't forget to import colors
+include 'colors';
+
 createTable(users, {
   formatters: {
     gender: function (value, header) {
       return {
         value: value,
         format: {
+          // All supported colors and styles can be found in official doc: https://www.npmjs.com/package/colors
           color: value === 'M' ? 'cyan' : 'magenta',
           alignment: 'right',
         },
