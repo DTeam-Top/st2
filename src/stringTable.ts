@@ -105,8 +105,8 @@ export function createTable(
     // Get the lines of each cell once, so we don't have to keep splitting
     // over and over in the loop after this one.
     const cellLines = [];
-    for (let col = 0; col < row.length; ++col) {
-      cellLines.push(String(row[col]).split('\n'));
+    for (const element of row) {
+      cellLines.push(String(element).split('\n'));
     }
 
     // Print the row one line at a time (this requires revisiting each cell N times for N lines)
@@ -154,8 +154,8 @@ function appendRowAndFormat(
   const row = [],
     cellFormats = [];
 
-  for (let i = 0; i < headers.length; ++i) {
-    const header = headers[i];
+  for (const element of headers) {
+    const header = element;
     let value = data[header];
     const typeOf = typeof value;
     if (typeOf === 'function') {
@@ -207,10 +207,10 @@ function createRowSeparator(totalWidth: number, separator: string) {
 function getMaxWidth(rows: string[][], columnIndex: number) {
   let maxWidth = 0;
   let lines;
-  for (let i = 0; i < rows.length; ++i) {
-    lines = String(rows[i][columnIndex]).split('\n');
-    for (let j = 0; j < lines.length; ++j) {
-      maxWidth = Math.max(maxWidth, strLength(lines[j]));
+  for (const row of rows) {
+    lines = String(row[columnIndex]).split('\n');
+    for (const line of lines) {
+      maxWidth = Math.max(maxWidth, strLength(line));
     }
   }
   return maxWidth;
@@ -218,8 +218,8 @@ function getMaxWidth(rows: string[][], columnIndex: number) {
 
 function getMaxHeight(row: string[]) {
   let maxHeight = 1;
-  for (let i = 0; i < row.length; ++i) {
-    maxHeight = Math.max(maxHeight, lineCount(String(row[i])));
+  for (const element of row) {
+    maxHeight = Math.max(maxHeight, lineCount(String(element)));
   }
   return maxHeight;
 }
