@@ -46,7 +46,7 @@ createTable(users);
 
 For the input of `createTable`, please note:
 
-- a single object will be treat as `[object]`.
+- a single object will be treated as `[object]`.
 - `null`, `undefined`, `''`, `{}`, `[]` and `[{}]` will return an empty string.
 - "empty" items in the input will be removed, fox examples:
 
@@ -361,7 +361,7 @@ createTable(users, {headerSeparator: '*'});
  */
 ```
 
-Again, [the test files](test) shows all examples with different options.
+Again, [the test files](test) show all examples with different options.
 
 ## How to deploy
 

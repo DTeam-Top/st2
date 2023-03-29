@@ -318,14 +318,15 @@ test('gives precedence to a column-specific formatter before a type formatter', 
 test('by default, outputs the empty string for null an undefined', t => {
   baseObjects[0].a = null;
   baseObjects[0].b = undefined;
+  baseObjects[0].c = 0;
 
   t.true(
     tableEqual(
       createTable(baseObjects),
       `
-      | a   | b   | c   |
+      | a   | b   |   c |
       -------------------
-      |     |     | cow |
+      |     |     |   0 |
       | arc | bra | cap |
       `
     )

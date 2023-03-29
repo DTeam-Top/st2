@@ -328,7 +328,7 @@ function repeatToLength(value: string, length: number) {
 
 function identityCreator(value: any, formatters: any, typeFormatters: any) {
   return (value: any) => {
-    if (!value) {
+    if (typeof value !== 'number' && !value) {
       return '';
     } else if (value && typeof value === 'object') {
       return createTable(value, {formatters, typeFormatters});
